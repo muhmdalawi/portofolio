@@ -1,65 +1,72 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontak | Portofolio Saya</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak | Portofolio Saya</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
     <header>
         <nav class="navbar">
-          <h1 class="logo">Muhamad Alawi</h1>
-          <div class="menu-toggle" onclick="toggleMenu()">
-            <i class='bx bx-menu'></i>
-          </div>
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="sertifikasi.html">Sertifikasi</a></li>
-            <li><a href="pendidikan.html">Pendidikan</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="kontak.html" class="active">Kontak</a></li>
-          </ul>
+            <h1 class="logo"><a href="index.html">Muhamad Alawi</a></h1>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class='bx bx-menu'></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sertifikasi.html">Sertifikasi</a></li>
+                <li><a href="pendidikan.html">Pendidikan</a></li>
+                <li><a href="portfolio.html">Portofolio</a></li>
+                <li><a href="kontak.html" class="active">Kontak</a></li>
+            </ul>
         </nav>
-      </header>
+    </header>
 
-  <main>
-    <section class="section contact-section">
-        <h2>Contact Me</h2>
-        <div class="contact-container">
-          <div class="contact-left">
-            <form id="submit-to-google-sheet" name="submit-to-google-sheet">
-              <input type="text" name="nama" placeholder="Nama" required>
-              <input type="email" name="email" placeholder="Email" required>
-              <textarea name="pesan" cols="30" rows="10" placeholder="Tulis pesan anda..." required></textarea>
-              
-              <div class="button-group">
-                <button type="submit" class="btn-submit">Kirim</button>
-                <button type="button" class="btn-loading hidden" disabled>Loading...</button>
-              </div>
-            </form>
-            <div class="my-alert hidden">Pesan berhasil dikirim!</div>
-          </div>
-      
-          <div class="contact-right" id="messageDisplay">
-            <h3>Pesan Masuk</h3>
-            <div id="messagesList"></div>
-          </div>          
-        </div>
-      </section>
-  </main>
+    <main>
+        <section class="section contact-section">
+            <h2>Kontak Saya</h2>
+            <div class="contact-container">
+                <div class="contact-left">
+                    <form id="submit-to-google-sheet" name="submit-to-google-sheet">
+                        <input type="text" name="nama" placeholder="Nama" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <textarea name="pesan" cols="30" rows="10" placeholder="Tulis pesan anda..."
+                            required></textarea>
 
-  <footer>  
-    <ul class="social">
-      <li><a href="https://www.facebook.com/share/16NueYr3sC/" target="_blank"><i class='bx bxl-facebook-circle'></i></a></li>
-      <li><a href="https://www.linkedin.com/in/muhamad-alawi-2b991b228/" target="_blank"><i class='bx bxl-linkedin-square'></i></a></li>
-      <li><a href="https://www.instagram.com/mhmd.awiii?igsh=OWh6YWc3YzU0N3Fp" target="_blank"><i class='bx bxl-instagram-alt'></i></a></li>
-      <li><a href="https://github.com/muhmdalawi" target="_blank"><i class='bx bxl-github'></i></a></li>
-    </ul>
-    <p>&copy; 2025 Muhamad Alawi. All rights reserved.</p>
-  </footer>  
+                        <div class="button-group">
+                            <button type="submit" class="btn-submit">Kirim</button>
+                            <button type="button" class="btn-loading hidden" disabled>Loading...</button>
+                        </div>
+                    </form>
+                    <div class="my-alert hidden">Pesan berhasil dikirim!</div>
+                </div>
+
+                <div class="contact-right" id="messageDisplay">
+                    <h3>Pesan Masuk</h3>
+                    <div id="messagesList"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <ul class="social">
+            <li><a href="https://www.facebook.com/share/16NueYr3sC/" target="_blank"><i
+                        class='bx bxl-facebook-circle'></i></a></li>
+            <li><a href="https://www.linkedin.com/in/muhamad-alawi-2b991b228/" target="_blank"><i
+                        class='bx bxl-linkedin-square'></i></a></li>
+            <li><a href="https://www.instagram.com/mhmd.awiii?igsh=OWh6YWc3YzU0N3Fp" target="_blank"><i
+                        class='bx bxl-instagram-alt'></i></a></li>
+            <li><a href="https://github.com/muhmdalawi" target="_blank"><i class='bx bxl-github'></i></a></li>
+        </ul>
+        <p>&copy; 2025 Muhamad Alawi. All rights reserved.</p>
+    </footer>
 </body>
+
 </html>

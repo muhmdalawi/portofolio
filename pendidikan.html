@@ -1,63 +1,100 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pendidikan | Portofolio Saya</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendidikan | Portofolio Saya</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
     <header>
         <nav class="navbar">
-          <h1 class="logo">Muhamad Alawi</h1>
-          <div class="menu-toggle" onclick="toggleMenu()">
-            <i class='bx bx-menu'></i>
-          </div>
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="sertifikasi.html">Sertifikasi</a></li>
-            <li><a href="pendidikan.html" class="active">Pendidikan</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="kontak.html">Kontak</a></li>
-          </ul>
+            <h1 class="logo"><a href="index.html">Muhamad Alawi</a></h1>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class='bx bx-menu'></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sertifikasi.html">Sertifikasi</a></li>
+                <li><a href="pendidikan.html" class="active">Pendidikan</a></li>
+                <li><a href="portfolio.html">Portofolio</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
         </nav>
-      </header>
+    </header>
 
-  <main>
-    <section class="section">
-      <h2>Pendidikan</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <h3>SEKOLAH DASAR</h3>
-          <p>SDN Pangarakan 02 - 2011-2017</p>
-        </div>
-        <div class="timeline-item">
-          <h3>SEKOLAH MENENGAH PERTAMA / Madrasah Tsanawiyah</h3>
-          <p>MTs RIYADHUL ULUM - 2017-2020</p>
-        </div>
-        <div class="timeline-item">
-          <h3>SEKOLAH MENENGAH KEJURUAN</h3>
-          <p>SMK WIKRAMA BOGOR - 2020-2023</p>
-        </div>
-        <div class="timeline-item">
-          <h3>S1 Sistem Informasi</h3>
-          <p>Universitas Pamulang - 2025-2029</p>
-        </div>
-      </div>
-    </section>
-  </main>
+    <main>
+        <section class="section">
+            <h2>Pendidikan</h2>
+            <div class="timeline-pendidikan">
+                <div class="container left">
+                    <div class="date">2011-2017</div>
+                    <i class="icon fa fa-home"></i>
+                    <div class="content">
+                        <h2>📘 SDN PANGARAKAN 02</h2>
+                        <p>
+                            Menempuh pendidikan dasar di SDN PANGARAKAN 02, membangun fondasi kemampuan membaca,
+                            menulis, berhitung, serta memperkuat nilai-nilai kedisiplinan dan tanggung jawab sejak dini.
+                        </p>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="date">2017-2020</div>
+                    <i class="icon fa fa-gift"></i>
+                    <div class="content">
+                        <h2>📗 MTs RIYADHUL ULUM</h2>
+                        <p>
+                            Melanjutkan pendidikan ke tingkat menengah pertama di MTs RIYADHUL ULUM dengan fokus pada
+                            pengembangan akademik dan karakter religius. Aktif dalam kegiatan ekstrakurikuler serta
+                            pembinaan akhlak dan spiritual.
+                        </p>
+                    </div>
+                </div>
+                <div class="container left">
+                    <div class="date">2020-2023</div>
+                    <i class="icon fa fa-user"></i>
+                    <div class="content">
+                        <h2>📙 SMK WIKRAMA BOGOR</h2>
+                        <p>
+                            Mengambil jurusan Rekayasa Perangkat Lunak untuk memperdalam ilmu komputer dan teknologi.
+                            Belajar dasar-dasar pemrograman, jaringan komputer, serta praktik langsung dalam dunia IT
+                            melalui program magang.
+                        </p>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="date">2025-2028</div>
+                    <i class="icon fa fa-running"></i>
+                    <div class="content">
+                        <h2>📕 UNIVERSITAS PAMULANG</h2>
+                        <p>
+                            Sedang menjalani studi strata satu (S1) di Universitas Pamulang dengan jurusan Teknik
+                            Informatika. Fokus pada pengembangan keterampilan teknologi tingkat lanjut seperti
+                            pengembangan web, basis data, dan kecerdasan buatan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <footer>  
-    <ul class="social">
-      <li><a href="https://www.facebook.com/share/16NueYr3sC/" target="_blank"><i class='bx bxl-facebook-circle'></i></a></li>
-      <li><a href="https://www.linkedin.com/in/muhamad-alawi-2b991b228/" target="_blank"><i class='bx bxl-linkedin-square'></i></a></li>
-      <li><a href="https://www.instagram.com/mhmd.awiii?igsh=OWh6YWc3YzU0N3Fp" target="_blank"><i class='bx bxl-instagram-alt'></i></a></li>
-      <li><a href="https://github.com/muhmdalawi" target="_blank"><i class='bx bxl-github'></i></a></li>
-    </ul>
-    <p>&copy; 2025 Muhamad Alawi. All rights reserved.</p>
-  </footer>  
+    <footer>
+        <ul class="social">
+            <li><a href="https://www.facebook.com/share/16NueYr3sC/" target="_blank"><i
+                        class='bx bxl-facebook-circle'></i></a></li>
+            <li><a href="https://www.linkedin.com/in/muhamad-alawi-2b991b228/" target="_blank"><i
+                        class='bx bxl-linkedin-square'></i></a></li>
+            <li><a href="https://www.instagram.com/mhmd.awiii?igsh=OWh6YWc3YzU0N3Fp" target="_blank"><i
+                        class='bx bxl-instagram-alt'></i></a></li>
+            <li><a href="https://github.com/muhmdalawi" target="_blank"><i class='bx bxl-github'></i></a></li>
+        </ul>
+        <p>&copy; 2025 Muhamad Alawi. All rights reserved.</p>
+    </footer>
 </body>
+
 </html>

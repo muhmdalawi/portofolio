@@ -50,6 +50,11 @@ header {
     max-width: 100%;
 }
 
+.logo a{
+  color: white;
+  text-decoration: none;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -107,6 +112,194 @@ header {
         font-size: 20px;
         flex: 1;
         order: 1;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.timeline-pendidikan {
+    position: relative;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.timeline-pendidikan::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: #006E51;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.container {
+    padding: 15px 30px;
+    position: relative;
+    background: inherit;
+    width: 50%;
+}
+
+.container.left {
+    left: 0;
+}
+
+.container.right {
+    left: 50%;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: calc(50% - 8px);
+    right: -8px;
+    background: #ffffff;
+    border: 2px solid #006E51;
+    border-radius: 16px;
+    z-index: 1;
+}
+
+.container.right::after {
+    left: -8px;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    top: calc(50% - 1px);
+    right: 8px;
+    background: #006E51;
+    z-index: 1;
+}
+
+.container.right::before {
+    left: 8px;
+}
+
+.container .date {
+    position: absolute;
+    display: inline-block;
+    top: calc(50% - 8px);
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1;
+}
+
+.container.left .date {
+    right: -100px;
+}
+
+.container.right .date {
+    left: -100px;
+}
+
+.container .icon {
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    padding: 9px 0;
+    top: calc(50% - 20px);
+    background: #2c3e50;
+    border: 2px solid #2c3e50;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 18px;
+    color: #2c3e50;
+    z-index: 1;
+}
+
+.container.left .icon {
+    right: 56px;
+}
+
+.container.right .icon {
+    left: 56px;
+}
+
+.container .content {
+    padding: 30px 90px 30px 30px;
+    background: #1abc9c;
+    position: relative;
+    border-radius: 0 500px 500px 0;
+}
+
+.container.right .content {
+    padding: 30px 30px 30px 90px;
+    border-radius: 500px 0 0 500px;
+}
+
+.container .content h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: normal;
+    color: white;
+}
+
+.container .content p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 22px;
+    color: #000000;
+}
+
+@media (max-width: 767.98px) {
+    .timeline-pendidikan::after {
+        left: 90px;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 120px;
+        padding-right: 30px;
+    }
+
+    .container.right {
+        left: 0%;
+    }
+
+    .container.left::after,
+    .container.right::after {
+        left: 82px;
+    }
+
+    .container.left::before,
+    .container.right::before {
+        left: 100px;
+        border-color: transparent #006E51 transparent transparent;
+    }
+
+    .container.left .date,
+    .container.right .date {
+        right: auto;
+        left: -5px;
+    }
+
+    .container.left .icon,
+    .container.right .icon {
+        right: auto;
+        left: 146px;
+    }
+
+    .container.left .content,
+    .container.right .content {
+        padding: 30px 30px 30px 90px;
+        border-radius: 500px 0 0 500px;
     }
 }
 
@@ -329,31 +522,59 @@ footer {
 .hero-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
     align-items: center;
     justify-content: space-between;
 }
 
 .hero-text {
-    flex: 1 1 300px;
-    max-width: 500px;
+    flex: 1 1 400px;
+    max-width: 600px;
 }
 
-/* .hero-image {
-    flex: 1 1 300px;
-} */
+.hero-text2 {
+    margin-top: 100px;
+    margin-bottom: 0 auto;
+    text-align: center;
+}
 
-/* .hero-image img{
+.hero-text2 h3{
     margin: 0 auto;
-} */
+}
+
+.hero-image {
+    flex: 1 1 300px;
+    display: flex;
+    justify-content: center;
+}
 
 .profile-img {
     border-radius: 50%;
     width: 300px;
     height: 300px;
     object-fit: cover;
-    margin: 0 auto;
 }
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-image {
+        justify-content: center;
+    }
+
+    .profile-img {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+
 
 .btn {
     display: inline-block;
