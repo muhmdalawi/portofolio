@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contactForm");
-    const scriptURL = "https://script.google.com/macros/s/AKfycbzdsmPRu-J5eMje_FTGNCLv6kb1meN6T9B6jUdmOJJVD3M6lta0cxfdBRdDKF3VUB7l/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzB6lkM8U612kl9MDNfZWlS1R3J4-4FqbsHXnxXueNS9zBpcAv1LDzfJzr9PZwbriI-/exec";
   
     form.addEventListener("submit", function (e) {
         e.preventDefault();
