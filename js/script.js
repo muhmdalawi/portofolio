@@ -1,36 +1,36 @@
-const scriptURL =
-                'https://script.google.com/macros/s/AKfycbyZPuKhiwX_JBCvzwOsYYX3RDq_WraRCego-h8HEncwVafnWn5ELmaaFS8WxxAXsfl9uQ/exec'
-            const form = document.forms['submit-to-google-sheet'];
-            const btnSubmit = document.querySelector('.btn-submit');
-            const btnReset = document.querySelector('.btn-reset');
-            const btnLoading = document.querySelector('.btn-loading');
-            const MyAlert = document.querySelector('.my-alert');
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyZPuKhiwX_JBCvzwOsYYX3RDq_WraRCego-h8HEncwVafnWn5ELmaaFS8WxxAXsfl9uQ/exec';
 
-            form.addEventListener('submit', e => {
-                e.preventDefault()
+const form = document.forms['submit-to-google-sheet'];
+const btnSubmit = document.querySelector('.btn-submit');
+const btnLoading = document.querySelector('.btn-loading');
+const myAlert = document.querySelector('.my-alert');
 
-                //ketika tombol submit diklik
+form.addEventListener('submit', e => {
+  e.preventDefault();
 
-                btnLoading.classList.toggle('d-none');
-                btnSubmit.classList.toggle('d-none');
-                btnReset.classList.toggle('d-none');
+  btnLoading.classList.remove('hidden');
+  btnSubmit.classList.add('hidden');
 
-                fetch(scriptURL, {
-                        method: 'POST',
-                        body: new FormData(form)
-                    })
-                    .then(response => {
-                        btnLoading.classList.toggle('d-none');
-                        btnSubmit.classList.toggle('d-none');
-                        btnReset.classList.toggle('d-none');
-                        MyAlert.classList.toggle('d-none');
-                        //RESET
-                        form.reset();
-                        console.log('Success!', response)
-                    })
-                    .catch(error => console.error('Error!', error.message))
-            })
-  
+  fetch(scriptURL, {
+    method: 'POST',
+    body: new FormData(form)
+  })
+  .then(response => {
+    btnLoading.classList.add('hidden');
+    btnSubmit.classList.remove('hidden');
+    myAlert.classList.remove('hidden');
+    form.reset();
+
+    setTimeout(() => {
+      myAlert.classList.add('hidden');
+    }, 5000);
+  })
+  .catch(error => {
+    btnLoading.classList.add('hidden');
+    btnSubmit.classList.remove('hidden');
+    console.error('Error!', error.message);
+  });
+});
 
   function openModal(imageSrc, description) {
     document.getElementById('modalImage').src = imageSrc;
