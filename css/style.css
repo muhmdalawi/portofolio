@@ -270,21 +270,6 @@ footer {
     margin-bottom: 50px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #1abc9c;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background-color: #16a085;
-}
-
 .highlight {
     color: #1abc9c;
 }
@@ -331,4 +316,40 @@ footer {
     font-size: 2rem;
     color: red;
     cursor: pointer;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-submit {
+    background-color: #1abc9c;
+    color: white;
+}
+
+.btn-loading {
+    background-color: #1abc9c;
+    color: black;
+}
+
+.hidden {
+    display: none;
+}
+
+.my-alert {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    border-radius: 5px;
+    border: 1px solid #c3e6cb;
 }
