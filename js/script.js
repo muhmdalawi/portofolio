@@ -15,6 +15,7 @@ form.addEventListener('submit', e => {
   const formData = new FormData(form);
   const nama = formData.get('nama');
   const pesan = formData.get('pesan');
+  const rating = formData.get('rating');
   const initial = nama.charAt(0).toUpperCase();
 
   fetch(scriptURL, {
@@ -32,7 +33,8 @@ form.addEventListener('submit', e => {
         <div class="avatar">${initial}</div>
         <div class="message-content">
           <strong>${nama}</strong><br>
-          ${pesan}
+          ${pesan}<br>
+          <span class="rating">Rating: <span class="stars2">${'★'.repeat(Number(rating))}</span></span>
         </div>
       `;
       messagesList.prepend(msg);
@@ -43,6 +45,8 @@ form.addEventListener('submit', e => {
       setTimeout(() => {
         myAlert.classList.add('hidden');
       }, 4000);
+
+      loadMessages();
     })
     .catch(error => {
       btnLoading.classList.add('hidden');
@@ -58,6 +62,8 @@ function loadMessages() {
     .then(data => {
       messagesList.innerHTML = '';
 
+      updateAverageRating(data);
+
       if (data.length === 0) {
         const emptyMsg = document.createElement('p');
         emptyMsg.textContent = 'Tidak ada pesan.';
@@ -69,13 +75,15 @@ function loadMessages() {
 
       data.reverse().slice(0, 5).forEach(entry => {
         const initial = entry.nama?.charAt(0)?.toUpperCase() || '?';
+        const rating = entry.rating || '0';
         const msg = document.createElement('div');
         msg.classList.add('message-item');
         msg.innerHTML = `
           <div class="avatar">${initial}</div>
           <div class="message-content">
             <strong>${entry.nama}</strong><br>
-            ${entry.pesan}
+            ${entry.pesan}<br>
+            <span class="rating">Rating: ${'★'.repeat(Number(rating))}</span>
           </div>
         `;
         messagesList.appendChild(msg);
@@ -87,7 +95,35 @@ function loadMessages() {
     });
 }
 
+function updateAverageRating(data) {
+  const ratingValue = document.getElementById('ratingValue');
+  const ratingStars = document.getElementById('ratingStars');
+
+  const ratings = data
+    .map(entry => parseInt(entry.rating))
+    .filter(val => !isNaN(val));
+
+  if (ratings.length === 0) {
+    ratingValue.textContent = '0';
+    ratingStars.textContent = '☆☆☆☆☆';
+    return;
+  }
+
+  const average = ratings.reduce((a, b) => a + b, 0) / ratings.length;
+  const rounded = Math.round(average * 10) / 10;
+
+  ratingValue.textContent = rounded.toFixed(1);
+
+  const fullStars = Math.floor(rounded);
+  const halfStar = rounded % 1 >= 0.5;
+  let stars = '★'.repeat(fullStars);
+  if (halfStar) stars += '½';
+  stars = stars.padEnd(5, '☆');
+  ratingStars.textContent = stars;
+}
+
 document.addEventListener("DOMContentLoaded", loadMessages);
+
 
 
 

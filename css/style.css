@@ -456,6 +456,85 @@ form {
     margin: auto;
 }
 
+.rating-group {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .rating-group input {
+    display: none;
+  }
+  
+  .rating-group label {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .rating-group input:checked ~ label,
+  .rating-group label:hover,
+  .rating-group label:hover ~ label {
+    color: gold;
+  }
+
+  .rating-summary {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f6f6f6;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .rating-summary h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .average-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    animation: fadeInUp 1s ease forwards;
+  }
+  
+  #ratingValue {
+    font-size: 32px;
+    font-weight: bold;
+    color: #f39c12;
+  }
+  
+  .stars {
+    font-size: 24px;
+    color: gold;
+  }
+
+  .stars2 {
+    color: gold;
+    font-weight: bold;
+  }
+  
+  
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+
 form input,
 form textarea {
     padding: 10px;

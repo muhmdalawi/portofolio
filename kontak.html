@@ -39,6 +39,17 @@
                         <textarea name="pesan" cols="30" rows="10" placeholder="Tulis pesan anda..."
                             required></textarea>
 
+                        <label for="rating">Rating:</label>
+                        <div class="rating-group">
+                            <input type="radio" name="rating" value="5" id="rate-5" required><label
+                                for="rate-5">★</label>
+                            <input type="radio" name="rating" value="4" id="rate-4"><label for="rate-4">★</label>
+                            <input type="radio" name="rating" value="3" id="rate-3"><label for="rate-3">★</label>
+                            <input type="radio" name="rating" value="2" id="rate-2"><label for="rate-2">★</label>
+                            <input type="radio" name="rating" value="1" id="rate-1"><label for="rate-1">★</label>
+                        </div>
+
+
                         <div class="button-group">
                             <button type="submit" class="btn-submit">Kirim</button>
                             <button type="button" class="btn-loading hidden" disabled>Loading...</button>
@@ -50,6 +61,14 @@
                 <div class="contact-right" id="messageDisplay">
                     <h3>Pesan Masuk</h3>
                     <div id="messagesList"></div>
+                </div>
+
+            </div>
+            <div class="rating-summary">
+                <h3>Overall Rating</h3>
+                <div class="average-rating">
+                    <span id="ratingValue">0</span>
+                    <span class="stars" id="ratingStars">☆☆☆☆☆</span>
                 </div>
             </div>
         </section>
