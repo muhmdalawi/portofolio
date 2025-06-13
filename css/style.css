@@ -260,13 +260,14 @@ header {
 
 @media (max-width: 767.98px) {
     .timeline-pendidikan::after {
-        left: 90px;
+        left: 25px;
     }
 
     .container {
         width: 100%;
-        padding-left: 120px;
-        padding-right: 30px;
+        padding-left: 60px;
+        padding-right: 15px;
+        margin-bottom: 40px;
     }
 
     .container.right {
@@ -275,33 +276,62 @@ header {
 
     .container.left::after,
     .container.right::after {
-        left: 82px;
+        left: 17px;
+        top: 20px; /* fix marker position */
     }
 
     .container.left::before,
     .container.right::before {
-        left: 100px;
-        border-color: transparent #006E51 transparent transparent;
-    }
-
-    .container.left .date,
-    .container.right .date {
-        right: auto;
-        left: -5px;
+        left: 35px;
+        top: 28px; /* align line with marker */
+        width: 25px;
+        background: #006E51;
     }
 
     .container.left .icon,
     .container.right .icon {
-        right: auto;
-        left: 146px;
+        position: absolute;
+        left: 60px;
+        top: 15px;
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+        padding: 6px 0;
+        background: #2c3e50;
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .container.left .date,
+    .container.right .date {
+        position: relative;
+        left: 50px;
+        top: 0;
+        margin-bottom: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        text-align: left;
+        color: #2c3e50;
     }
 
     .container.left .content,
     .container.right .content {
-        padding: 30px 30px 30px 90px;
-        border-radius: 500px 0 0 500px;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .container .content h2 {
+        font-size: 16px;
+    }
+
+    .container .content p {
+        font-size: 14px;
+        line-height: 20px;
     }
 }
+
 
 
 .section {
