@@ -28,13 +28,19 @@
 
   <main>
     <section class="section">
-      <h2>Contact Me</h2>
-      <form id="submit-to-google-sheet" name="submit-to-google-sheet">
-        <input type="text" name="nama" placeholder="Nama" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="pesan" cols="30" rows="10" placeholder="Tulis pesan anda..." required></textarea>
-        <button type="submit">Kirim</button>
-      </form>
+        <h2>Contact Me</h2>
+        <form id="submit-to-google-sheet" name="submit-to-google-sheet">
+          <input type="text" name="nama" placeholder="Nama" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="pesan" cols="30" rows="10" placeholder="Tulis pesan anda..." required></textarea>
+          
+          <div class="button-group">
+            <button type="submit" class="btn-submit">Kirim</button>
+            <button type="button" class="btn-loading hidden" disabled>Loading...</button>
+          </div>
+        </form>
+    
+        <div class="my-alert hidden">Pesan berhasil dikirim!</div>
     </section>
   </main>
 
@@ -47,40 +53,5 @@
     </ul>
     <p>&copy; 2025 Muhamad Alawi. All rights reserved.</p>
   </footer>
-
-  <script>
-  const scriptURL =
-                'https://script.google.com/macros/s/AKfycbyZPuKhiwX_JBCvzwOsYYX3RDq_WraRCego-h8HEncwVafnWn5ELmaaFS8WxxAXsfl9uQ/exec'
-            const form = document.forms['submit-to-google-sheet'];
-            const btnSubmit = document.querySelector('.btn-submit');
-            const btnReset = document.querySelector('.btn-reset');
-            const btnLoading = document.querySelector('.btn-loading');
-            const MyAlert = document.querySelector('.my-alert');
-
-            form.addEventListener('submit', e => {
-                e.preventDefault()
-
-                //ketika tombol submit diklik
-
-                btnLoading.classList.toggle('d-none');
-                btnSubmit.classList.toggle('d-none');
-                btnReset.classList.toggle('d-none');
-
-                fetch(scriptURL, {
-                        method: 'POST',
-                        body: new FormData(form)
-                    })
-                    .then(response => {
-                        btnLoading.classList.toggle('d-none');
-                        btnSubmit.classList.toggle('d-none');
-                        btnReset.classList.toggle('d-none');
-                        MyAlert.classList.toggle('d-none');
-                        //RESET
-                        form.reset();
-                        console.log('Success!', response)
-                    })
-                    .catch(error => console.error('Error!', error.message))
-            })
-</script>
 </body>
 </html>
