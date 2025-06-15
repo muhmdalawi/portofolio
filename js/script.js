@@ -125,9 +125,6 @@ function updateAverageRating(data) {
 document.addEventListener("DOMContentLoaded", loadMessages);
 
 
-
-
-
 function openModal(imageSrc, description) {
   document.getElementById('modalImage').src = imageSrc;
   document.getElementById('modalDesc').textContent = description;
@@ -148,4 +145,8 @@ window.onclick = function (event) {
 function toggleMenu() {
   document.querySelector('.nav-links').classList.toggle('active');
 }
+
+
+
+
 

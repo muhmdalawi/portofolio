@@ -72,10 +72,29 @@ header {
     color: #1abc9c;
 }
 
+.nav-links .contact-me:hover{
+    color: white;
+}
+
 .nav-links a.active {
     color: #1abc9c;
     border-bottom: 2px solid #1abc9c;
 }
+
+.contact-me{
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: black;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+  }
+  .contact-me:hover{
+    color: white;
+  }
 
 .menu-toggle {
     display: none;
@@ -83,6 +102,57 @@ header {
     color: #ecf0f1;
     cursor: pointer;
 }
+
+.skills-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 1rem;
+  }
+  
+  .skill-item {
+    background-color: #2c3e50 ;
+    padding: 16px;
+    border-radius: 12px;
+    width: 50px;
+    height: 50px;
+    color: #1abc9c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+  }
+  
+  .skill-item i {
+    font-size: 2rem;
+  }
+  .skills-list .heading {
+    text-align: center;
+  }
+  
+  
+  .skill-item:nth-child(1) { animation-delay: 0.1s; }
+  .skill-item:nth-child(2) { animation-delay: 0.2s; }
+  .skill-item:nth-child(3) { animation-delay: 0.3s; }
+  .skill-item:nth-child(4) { animation-delay: 0.4s; }
+  .skill-item:nth-child(5) { animation-delay: 0.5s; }
+  .skill-item:nth-child(6) { animation-delay: 0.6s; }
+  .skill-item:nth-child(7) { animation-delay: 0.7s; }
+  .skill-item:nth-child(8) { animation-delay: 0.8s; }
+  .skill-item:nth-child(9) { animation-delay: 0.9s; }
+  
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
 
 /* ======== Responsive ======== */
 @media (max-width: 768px) {
@@ -649,6 +719,20 @@ footer {
 .hero-text2 h3{
     margin: 0 auto;
 }
+
+.changing-text::after {
+    content: '|';
+    animation: blink 1s infinite;
+    color: black;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+
 
 .hero-image {
     flex: 1 1 300px;

@@ -9,6 +9,7 @@
     <script src="js/script.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
 </head>
 
@@ -21,10 +22,10 @@
             </div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="sertifikasi.html">Sertifikasi</a></li>
-                <li><a href="pendidikan.html">Pendidikan</a></li>
-                <li><a href="portfolio.html">Portofolio</a></li>
-                <li><a href="kontak.html">Kontak</a></li>
+                <li><a href="sertifikasi.html">Certification</a></li>
+                <li><a href="pendidikan.html">Education</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="kontak.html" class="contact-me">Contact Me</a></li>
             </ul>
         </nav>
     </header>
@@ -35,15 +36,12 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h3>Hi</h3>
-                    <h1>I'm <span class="highlight">Muhamad Alawi<br></span>a Flutter Developer</h1>
-                    <p>A Flutter Developer who loves crafting smooth and modern mobile app experiences. </p>
+                    <h1>I'm <span class="highlight">Muhamad Alawi<br></span>
+                        <span class="changing-text">a Flutter Developer</span>
+                    </h1>
+
+                    <p>A Flutter and Web Developer who enjoys building seamless, responsive, and engaging apps for both mobile and web.</p>
                     <a href="portfolio.html" class="btn">Portfolio Me</a>
-                    <!-- <h2>Halo, saya <span class="highlight">Muhamad Alawi</span></h2>
-          <p>Hello, I am a flutter developer at a junior level, I am in the position of the front end developer, with the
-            experience of building a responsive and optimized mobile application. Have a good understanding of UI/UX, API
-            integration, and state management. Enthusiastic to continue learning new technology and creating innovative
-            solutions.</p>
-          <a href="portfolio.html" class="btn">Portfolio Me</a> -->
                 </div>
                 <div class="hero-image">
                     <img src="assets/Muhamad-alawi.jpeg" alt="Foto Profil" class="profile-img">
@@ -51,15 +49,27 @@
             </div>
             <div class="hero-text2">
                 <h3 class="heading">About <span class="highlight">Me</span></h2>
-                    <h3>Frontend <span class="highlight"> Developer</span></h3>
-                    <p>Hello, I am a flutter developer at a junior level, I am in the position of the front end
-                        developer, with the
-                        experience of building a responsive and optimized mobile application. Have a good understanding
-                        of UI/UX, API
-                        integration, and state management. Enthusiastic to continue learning new technology and creating
-                        innovative
-                        solutions.</p>
+                    <p>Hi, I am a flutter developer and junior web developer, I am in the front-end developer position,
+                        with experience building responsive and optimized mobile applications. Have a good understanding
+                        of UI/UX, API integration, and state management. Passionate about continuing to learn new
+                        technologies and create innovative solutions.</p>
             </div>
+            <div class="skills-list">
+                <h3 class="heading">Skills</h3>
+                <div class="skills-icons">
+                  <div class="skill-item"><i class='bx bxl-html5'></i></div>
+                  <div class="skill-item"><i class='bx bxl-css3'></i></div>
+                  <div class="skill-item"><i class='bx bxl-javascript'></i></div>
+                  <div class="skill-item"><i class='bx bxl-figma'></i></div>
+                  <div class="skill-item"><i class='bx bxl-flutter'></i></div>
+                  <div class="skill-item"><i class='bx bxl-git'></i></div>
+                  <div class="skill-item"><i class='bx bxl-gitlab'></i></div>
+                  <div class="skill-item"><i class='bx bxl-github'></i></div>
+                  <div class="skill-item"><i class="bx bxl-visual-studio"></i></div>
+                </div>
+              </div>
+              
+              
         </section>
     </main>
 
@@ -75,6 +85,50 @@
         </ul>
         <p>&copy; 2025 Muhamad Alawi. All rights reserved.</p>
     </footer>
+    <script>
+        const roles = ["a Flutter Developer", "a Web Developer"];
+        const textElement = document.querySelector('.changing-text');
+
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingDelay = 100;
+        let erasingDelay = 50;
+        let newTextDelay = 2000;
+
+        function type() {
+            const currentRole = roles[roleIndex];
+
+            if (!isDeleting) {
+                textElement.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+
+                if (charIndex < currentRole.length) {
+                    setTimeout(type, typingDelay);
+                } else {
+                    setTimeout(() => {
+                        isDeleting = true;
+                        setTimeout(type, newTextDelay);
+                    }, newTextDelay);
+                }
+            } else {
+                textElement.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+
+                if (charIndex > 0) {
+                    setTimeout(type, erasingDelay);
+                } else {
+                    isDeleting = false;
+                    roleIndex = (roleIndex + 1) % roles.length;
+                    setTimeout(type, typingDelay);
+                }
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            if (roles.length) setTimeout(type, 500);
+        });
+    </script>
+
 </body>
 
 </html>
