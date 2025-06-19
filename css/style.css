@@ -328,6 +328,7 @@ header {
     color: #000000;
 }
 
+
 @media (max-width: 767.98px) {
     .timeline-pendidikan::after {
         left: 25px;
@@ -347,13 +348,13 @@ header {
     .container.left::after,
     .container.right::after {
         left: 17px;
-        top: 20px; /* fix marker position */
+        top: 20px;
     }
 
     .container.left::before,
     .container.right::before {
         left: 35px;
-        top: 28px; /* align line with marker */
+        top: 28px;
         width: 25px;
         background: #006E51;
     }
